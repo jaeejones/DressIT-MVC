@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DressIt.Models.Outfit>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Top.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bottom.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shoes.Name)
+        </th>
+        <th>
+            foreach (var accessory in item.Accessory)
+            {
+
+            }
+        </th>
+    </tr>
+
+@foreach (var item in Model) //This loop is looping over each outfit in the Model. So, item is accutally outfit. 
+{
+    <tr>
+        <td>
+            Top
+        </td>
+        <td>
+            Bottom
+        </td>
+        <td>
+            Shoes
+        </td>
+        <td>
+            Assesories 
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OutfitID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OutfitID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OutfitID })
+        </td>
+    </tr>
+}
+
+</table>
